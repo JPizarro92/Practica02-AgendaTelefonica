@@ -1,12 +1,196 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/icono.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
 </head>
 <body>
-    
+    <header class="header">
+        <div class="header-superior">
+            <div class="header-superior-izquierda">
+                <a href="#"><img src="img/Logotipo.png" alt=""></a>
+                
+            </div>
+            <div class="header-superior-derecha">
+                <nav class="navigation login">
+                    <div class="contenedor-busqueda">
+                        <span><i class="fas fa-search icono-buscar"></i></span>
+                        <input type="text" class="busqueda">   
+                    </div>
+                    <a href="#">Login</a>
+                    <a href="#">Registro</a>
+                </nav>
+                
+            </div>
+        </div>
+        <div class="contenedor-nav">
+            <nav class="navigation">
+                <a href="#" >Inicio</a>
+                <a href="#" >Nosotros</a>
+                <a href="#" >Portafolio</a>
+                <a href="#" >Servicio</a>
+                <a href="#" >Contacto</a>            
+            </nav>
+        </div>
+        
+    </header>
+
+    <main>
+        <section class="contenedor sobre-nosotros">
+            <h2 class="titulo">Agenda WEB.</h2>
+            <div class="contenedor-sobre-nosotros">
+                <img class="imagen-about-us" src="img/ilustracion1.svg" alt="">
+                <div class="contenido-textos">
+                    <h3><span>1</span>A la banguardia</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus perspiciatis rem, incidunt fugiat laudantium deserunt, officiis est deleniti debitis ipsum expedita iste nesciunt quaerat vitae voluptates ea labore repudiandae ullam?</p>
+                    <h3><span>2</span>Facil acceso</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus perspiciatis rem, incidunt fugiat laudantium deserunt, officiis est deleniti debitis ipsum expedita iste nesciunt quaerat vitae voluptates ea labore repudiandae ullam?</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="portafolio">
+            <div class="contenedor">
+                <h2 class="titulo">Portafolio</h2>
+                <div class="galeria-port">
+                    <div class="imagen-port">
+                        <img  src="img/default.jpg" alt="">
+                        <div class="hover-galeria">
+                            <img src="img/moving.png" alt="">
+                            <p>Nuestro trabajo</p>
+                        </div>
+                    </div>
+
+                    <div class="imagen-port">
+                        <img src="img/default.jpg" alt="">
+                        <div class="hover-galeria">
+                            <img src="img/moving.png" alt="">
+                            <p>Nuestro trabajo</p>
+                        </div>
+                    </div>
+
+                    <div class="imagen-port">
+                        <img src="img/default.jpg" alt="">
+                        <div class="hover-galeria">
+                            <img src="img/moving.png" alt="">
+                            <p>Nuestro trabajo</p>
+                        </div>
+                    </div>
+
+                    <div class="imagen-port">
+                        <img src="img/default.jpg" alt="">
+                        <div class="hover-galeria">
+                            <img src="img/moving.png" alt="">
+                            <p>Nuestro trabajo</p>
+                        </div>
+                    </div>
+
+                    <div class="imagen-port">
+                        <img src="img/default.jpg" alt="">
+                        <div class="hover-galeria">
+                            <img src="img/moving.png" alt="">
+                            <p>Nuestro trabajo</p>
+                        </div>
+                    </div>
+
+                    <div class="imagen-port">
+                        <img src="img/default.jpg" alt="">
+                        <div class="hover-galeria">
+                            <img src="img/moving.png" alt="">
+                            <p>Nuestro trabajo</p>
+                        </div>
+                    </div>
+
+                    <div class="imagen-port">
+                        <img src="img/default.jpg" alt="">
+                        <div class="hover-galeria">
+                            <img src="img/moving.png" alt="">
+                            <p>Nuestro trabajo</p>
+                        </div>
+                    </div>
+
+                    <div class="imagen-port">
+                        <img src="img/default.jpg" alt="">
+                        <div class="hover-galeria">
+                            <img src="img/moving.png" alt="">
+                            <p>Nuestro trabajo</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="clientes contenedor">
+            <h2 class="titulo">Que opinan nuestros clientes</h2>
+            <dic class="cards">
+                <div class="card">
+                    <img src="img/face1.jpg" alt="">
+                    <div class="contenido-texto-card">
+                        <h4>Name</h4>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae, delectus?</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="img/face2.jpg" alt="">
+                    <div class="contenido-texto-card">
+                        <h4>Name</h4>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae, delectus?</p>
+                    </div>
+                </div>
+            </dic>
+        </section>
+        <section class="about-services">
+            <div class="contenedor">
+                <h2 class="titulo">Nuestros Servicios</h2>
+                <div class="servicio-cont">
+                    <div class="servicio-ind">
+                        <img src="img/ilustracion3.svg" alt="">
+                        <h3>Name</h3>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut, iste!</p>
+                    </div>
+                    <div class="servicio-ind">
+                        <img src="img/ilustracion4.svg" alt="">
+                        <h3>Name</h3>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut, iste!</p>
+                    </div>
+                    <div class="servicio-ind">
+                        <img src="img/ilustracion5.svg" alt="">
+                        <h3>Name</h3>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut, iste!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="contenedor-footer">
+            <div class="content-foo">
+                <i class="fas fa-mobile-alt icono"></i>
+                <h4>Phone</h4>
+                <p>+59389894523</p>
+            </div>
+            <div class="content-foo">
+                <i class="fas fa-envelope icono"></i>
+                <h4>Email</h4>
+                <p>jpizarror@est.ups.edu.ec <br>
+                   scallet@est.ups.edu.ec
+                </p>
+            </div>
+            <div class="content-foo">
+                <i class="fas fa-map-marker-alt icono"></i>
+                <h4>Location</h4>
+                <p>Cuenca/Ecuador</p>
+            </div>
+        </div>
+        <h2 class="titulo-final">&copy; JRDesing | Jorge Pizarro - Rolando Calle </h2>
+    </footer>
 </body>
 </html>
