@@ -64,29 +64,30 @@ CREATE TABLE IF NOT EXISTS `phone` (
 
 DROP TABLE IF EXISTS `usuario`;
 CREATE TABLE IF NOT EXISTS `usuario` (
-  `usu_ide` int(255) NOT NULL AUTO_INCREMENT,
+  `usu_id` int(255) NOT NULL AUTO_INCREMENT,
   `usu_cedula` varchar(15) NOT NULL,
   `usu_name` varchar(50) NOT NULL,
   `usu_surname` varchar(100) NOT NULL,
   `usu_date_birth` date NOT NULL,
   `usu_rol` varchar(50) NOT NULL,
   `usu_email` varchar(255) NOT NULL,
+  `usu_sex` varchar(1) NOT NULL DEFAULT 'N',
   `usu_password` varchar(255) NOT NULL,
   `usu_image` varchar(255) DEFAULT NULL,
   `usu_address` varchar(255) NOT NULL,
   `usu_delete` varchar(1) NOT NULL DEFAULT 'N',
   `usu_created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `usu_updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`usu_ide`)
+  PRIMARY KEY (`usu_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`usu_ide`, `usu_cedula`, `usu_name`, `usu_surname`, `usu_date_birth`, `usu_rol`, `usu_email`, `usu_password`, `usu_image`, `usu_address`, `usu_delete`, `usu_created_at`, `usu_updated_at`) VALUES
-(1, '0105165542', 'JORGE VINICIO', 'PIZARRO ROMERO', '1992-01-16', 'ADMIN', '', 'd41d8cd98f00b204e9800998ecf8427e', NULL, '', 'N', '2021-05-22 15:43:48', NULL),
-(2, '', '', '', '1996-05-15', 'ADMIN', '', 'd41d8cd98f00b204e9800998ecf8427e', NULL, '', 'N', '2021-05-22 15:50:02', NULL);
+INSERT INTO `usuario` (`usu_id`, `usu_cedula`, `usu_name`, `usu_surname`, `usu_date_birth`, `usu_rol`, `usu_email`,  `usu_sex`,`usu_password`, `usu_image`, `usu_address`, `usu_delete`, `usu_created_at`, `usu_updated_at`) VALUES
+(1, '0105165542', 'JORGE VINICIO', 'PIZARRO ROMERO', '1992-01-16', 'ADMIN', 'jpizarror@est.ups.edu.ec', 'M', 'd41d8cd98f00b204e9800998ecf8427e', NULL, '', 'N', '2021-05-22 15:43:48', NULL),
+(2, '0105622241', 'SEGUNDO ROLANDO', 'CALLE TIRADO', '1996-05-15', 'ADMIN', 'scallet@est.ups.edu.ec', 'M', 'd41d8cd98f00b204e9800998ecf8427e', NULL, '', 'N', '2021-05-22 15:50:02', NULL);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

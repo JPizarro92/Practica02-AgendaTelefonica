@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +8,9 @@
 
 </head>
 <body>
+
+    
+
     <?php
 
     include "../../config/connectDB.php";
@@ -17,10 +20,13 @@
     $usu_surname = isset($_POST['apellidos'])?mb_strtoupper(trim($_POST['apellidos']),'UTF-8'):null;
     $usu_date_birth = isset($_POST['fechaNacimiento'])?trim($_POST['fechaNacimiento']):null;
     $usu_email = isset($_POST['correo'])?trim($_POST['correo']) :null;
+    $usu_sex = isset($_POST['sexo'])?trim($_POST['sexo']):null;
     $usu_password = isset($_POST['password'])?trim($_POST['password']) :null;
     $usu_address = isset($_POST['direccion'])?trim($_POST['direccion']):null;
-    echo '<p></p>' . $usu_date_birth;
     
+    //******************************* */
+    //      CREACIÓN DE USUARIO       */
+    //******************************* */
     $sql = "INSERT INTO usuario 
         VALUES (0,  
                 '$usu_cedula', 
@@ -28,28 +34,112 @@
                 '$usu_surname', 
                 '$usu_date_birth', 
                 'USER', 
-                '$usu_email', 
+                '$usu_email',
+                '$usu_sex', 
                 MD5('$usu_password'), 
                 null,
                 '$usu_address', 
                 'N', 
                 now(), 
                 null)";
+
+    $conn->query($sql);
     
-    if ($conn->query($sql) === TRUE) { 
+    if ($conn == TRUE) { 
         echo "<p>Se ha creado los datos personales correctamemte!!!</p>"; 
+        
     }else{ 
         if($conn->errno == 1062){ 
             echo "<p class='error'>La persona con la cedula $cedula ya esta registrada en el sistema </p>"; 
         }else{ echo "<p class='error'>Error: " . mysqli_error($conn) . "</p>"; 
         } 
-    } 
+    }
+
+    $sql_consulta = mysqli_query($conn, "SELECT usu_id FROM usuario WHERE usu_cedula=$usu_cedula");
+    $ph_usu_id = (int) $sql_consulta->fetch_assoc()['usu_id'];
+    
+    $ph_type = 'MOVIL';
+    $ph_number = isset($_POST['movil'])?trim(trim($_POST['movil'])):null ;
+    $ph_ope_id = (int) isset($_POST['operadoraMovil'])?trim($_POST['operadoraMovil']):null;
+    
+
+    
+    //******************************* */
+    //      CREACIÓN DE MOVIL       */
+    //******************************* */
+    $sql = "INSERT INTO phone 
+        VALUES (0,  
+                '$ph_type',
+                '$ph_number',
+                'N', 
+                now(), 
+                null,
+                '$ph_ope_id',
+                '$ph_usu_id')";
+    
+    if ($conn->query($sql) === TRUE) { 
+        echo "<p>Se ha creado TELEFONO MOVIL correctamemte!!!</p>"; 
+    }else{ 
+        if($conn->errno == 1062){ 
+            echo "<p class='error'>Movil  $cedula ya esta registrada en el sistema </p>"; 
+        }else{ echo "<p class='error'>Error: " . mysqli_error($conn) . "</p>"; 
+        } 
+    }
+
+    //******************************* */
+    //      CREACIÓN DE FIJO       */
+    //******************************* */
+
+    $ph_type = 'FIJO';
+    $ph_number = isset($_POST['fijo'])?trim(trim($_POST['fijo'])):null ;
+    $ph_ope_id = isset($_POST['operadoraFija'])?trim($_POST['operadoraFija']):null;
+    
+    $sql = "INSERT INTO phone 
+        VALUES (0,  
+                '$ph_type',
+                '$ph_number',
+                'N', 
+                now(), 
+                null,
+                '$ph_ope_id',
+                '$ph_usu_id')";
+    
+    if ($conn->query($sql) === TRUE) { 
+        echo "<p>Se telefono fijo okay!!!</p>"; 
+    }else{ 
+        if($conn->errno == 1062){ 
+            echo "<p class='error'> Fijo phone $cedula ya esta registrada en el sistema </p>"; 
+        }else{ echo "<p class='error'>Error: " . mysqli_error($conn) . "</p>"; 
+        } 
+    }
+
     //cerrar la base de datos 
     $conn->close(); 
     echo "<a href='../vista/crear_usuario.html'>Regresar</a>"; ?> </body>
     
     ?>
-
+    <footer>
+        <div class="contenedor-footer">
+            <div class="content-foo">
+                <i class="fas fa-mobile-alt icono"></i>
+                <h4>Phone</h4>
+                <p>+59389894523</p>
+            </div>
+            <div class="content-foo">
+                <i class="fas fa-envelope icono"></i>
+                <h4>Email</h4>
+                <p>jpizarror@est.ups.edu.ec <br>
+                   scallet@est.ups.edu.ec
+                </p>
+            </div>
+            <div class="content-foo">
+                <i class="fas fa-map-marker-alt icono"></i>
+                <h4>Location</h4>
+                <p>Cuenca/Ecuador</p>
+            </div>
+        </div>
+        <h2 class="titulo-final">&copy; JRDesing | Jorge Pizarro - Rolando Calle </h2>
+    </footer>
 
 </body>
 </html>
