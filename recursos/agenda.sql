@@ -90,6 +90,10 @@ INSERT INTO `usuario` (`usu_id`, `usu_cedula`, `usu_name`, `usu_surname`, `usu_d
 (2, '0105622241', 'SEGUNDO ROLANDO', 'CALLE TIRADO', '1996-05-15', 'ADMIN', 'scallet@est.ups.edu.ec', 'M', 'd41d8cd98f00b204e9800998ecf8427e', NULL, '', 'N', '2021-05-22 15:50:02', NULL);
 COMMIT;
 
+INSERT INTO `operator` (`ope_id`, `ope_name`, `ope_delete`, `ope_created_at`, `ope_update_at`) VALUES 
+(1, 'CLARO', 'N', '2021-05-22 15:50:02', NULL), (2, 'MOVISTAR', 'N', '2021-05-22 15:50:02', NULL), (3, 'CNT', 'N', '2021-05-22 15:50:02', NULL), (4, 'ETAPA', 'N', '2021-05-22 15:50:02', NULL), (5, 'TUENTI', 'N', '2021-05-22 15:50:02', NULL)
+
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

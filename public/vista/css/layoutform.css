@@ -1,6 +1,6 @@
 main{
     display: flex;
-    flex-direction: column;
+    flex-direction: important column;
     justify-content: center;
     align-items: center;
 }
@@ -57,4 +57,9 @@ main{
 .boton:hover{
     background: #c0c0c0;
     color: #1b1b1b;
+}
+
+.cuerpo{
+    width: 100%;
+    display: flex;
 }

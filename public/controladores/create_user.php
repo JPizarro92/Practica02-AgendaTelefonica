@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crear Usuario</title>
+    <link rel="shortcut icon" href="../../public/vista/img/icono.ico" type="image/x-icon">
     <link rel="stylesheet" href="../vista/css/normalize.css">
     <link rel="stylesheet" href="../vista/css/style.css">
     <link rel="stylesheet" href="../vista/css/layoutform.css">
