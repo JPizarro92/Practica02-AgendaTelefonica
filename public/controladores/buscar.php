@@ -1,3 +1,15 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
 <?php
  //incluir conexión a la base de datos
 
@@ -33,13 +45,26 @@ $sql = "SELECT * FROM usuario,phone WHERE usu_cedula='$cedula' || usu_email='$ce
         echo " <td>" . $row['usu_email'] . "</td>"; 
         echo " <td>" . $row['usu_date_birth'] . "</td>"; 
         echo "</tr>"; 
+        
+
  } 
  } else { 
  echo "<tr>";
  echo " <td colspan='7'> No existen usuarios registradas en el sistema </td>";
  echo "</tr>"; 
  }
+ 
  echo "</table>";
  $conn->close(); 
  
 ?>
+ <div class="header-superior-derecha">
+                <div class="navigation login">
+                    <a href="https://www.skype.com/es/international-calls/">Llamar</a>
+                    <a href="#">Detalle</a>
+                    <a href="index.html">Regresar</a>
+                </div>
+                
+          </div>
+</body>
+</html>
